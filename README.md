@@ -1,3 +1,8 @@
+# Intro
+
+chmod -R a+rw temp log
+
+
 # Task description
 
 Task description is provided in Slovak language only:
