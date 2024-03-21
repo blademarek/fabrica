@@ -1,0 +1,9 @@
+parameters:
+    petXmlFilePath: %appDir%/../storage/pets.xml
+
+services:
+    xmlManager: App\Model\XmlManager(%petXmlFilePath%)
+
+    - App\Forms\FilterFormFactory
+    - App\Forms\PetFormFactory
+    - App\Model\PetManager

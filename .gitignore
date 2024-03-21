@@ -1,5 +1,7 @@
 log/*
 vendor/*
+temp/*
+storage/*
 !.gitignore
 !.htaccess
 

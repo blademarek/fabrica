@@ -15,7 +15,11 @@ final class RouterFactory
 	public static function createRouter(): RouteList
 	{
 		$router = new RouteList;
-		$router->addRoute('<presenter>/<action>[/<id>]', 'Home:default');
+		$router->addRoute('pet', 'Pet:add');
+		$router->addRoute('pet/<petId>', 'Pet:edit');
+        $router->addRoute('pet/delete/<petId>', 'Pet:delete');
+		$router->addRoute('<presenter>/<action>', 'Pet:shop');
+
 		return $router;
 	}
 }

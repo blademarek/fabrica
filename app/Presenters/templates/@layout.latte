@@ -4,16 +4,45 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width">
 
-	<title>{ifset title}{include title|stripHtml} | {/ifset}Nette Web</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+
+	{ifset title}<title>{include title|stripHtml}</title>{/ifset}
+
+	<style>
+        .alert-error {
+            background-color: red;
+        }
+    </style>
 </head>
 
 <body>
-	<div n:foreach="$flashes as $flash" n:class="flash, $flash->type">{$flash->message}</div>
+	{snippet flashMessages}
+        {foreach $flashes as $flash}
+            <div class="alert alert-{$flash->type} alert-dismissible fade show" role="alert">
+                {$flash->message}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        {/foreach}
+    {/snippet}
 
 	{include content}
 
 	{block scripts}
-	<script src="https://unpkg.com/nette-forms@3/src/assets/netteForms.js"></script>
-	{/block}
+    	<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+
+        <script src="https://unpkg.com/nette-forms@3/src/assets/netteForms.js"></script>
+
+    	<script>
+            setTimeout(function() {
+                document.querySelectorAll('.alert').forEach(function(alert) {
+                    alert.classList.add('fade');
+                    setTimeout(function() {
+                        alert.remove();
+                    }, 200);
+                });
+            }, 2000);
+        </script>
+    {/block}
 </body>
 </html>

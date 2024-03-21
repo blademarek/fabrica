@@ -1,6 +1,8 @@
 # Intro
 
-chmod -R a+rw temp log
+chmod -R a+rw temp log storage
+
+composer install inside container
 
 
 # Task description

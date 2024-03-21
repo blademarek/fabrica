@@ -1,0 +1,13 @@
+{block #title}Pet detail{/block}
+
+{block #content}
+    <div class="col-md-12">
+        <h1>Pet Id: {$petId}
+        <a href="{link 'Pet:shop'}" class="btn btn-secondary btn-lg pull-right">Back</a>
+        </h1>
+    </div>
+
+    <div class="col-md-12">
+        {control petForm}
+    </div>
+{/block}
