@@ -4,6 +4,8 @@
 - Data is stored in XML format
 - The project is dockerized
 - Both Bootstrap and Font Awesome are utilized
+- Xdebug is configured inside the container for easier debugging
+- Nginx is employed as a proxy
 
 
 # Setup
@@ -24,7 +26,7 @@
 
 3. Update permissions for docker application
     ```
-    chmod -R a+rw temp log content
+    chmod -R a+rw temp log storage
     ```
 
 4. Install composer packages.
